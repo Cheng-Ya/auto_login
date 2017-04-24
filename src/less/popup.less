@@ -1,0 +1,66 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 300px;
+  overflow-y: auto;
+  padding-bottom: 35px;
+  header{
+    background: #2e2b2b;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 14px;
+  }
+  .weui-cells__title{
+    color: #000;
+    font-weight: bold;
+  }
+  .weui-cell_switch{
+    border-bottom: 1px #ccc solid;
+    font-size: 14px;
+  }
+  .weui-cells_form{
+    font-size: 14px;
+    border-bottom: 1px #ccc solid;
+    .weui-cell{
+      height: 21px;
+    }
+  }
+  .page__bd{
+    border-bottom: 1px #ccc solid;
+    .weui-cells{
+      margin-top: 0;
+      max-height: 83px;
+      overflow-y: auto;
+    }
+    .weui-cell{
+      height: 21px;
+      .weui-cell__hd{
+        width: 30px;
+        img{
+          margin-top: 8px;
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
+      }
+      .weui-cell__ft{
+        width: 30px;
+        img{
+          margin-top: 6px;
+          width: 26px;
+          height: 26px;
+          cursor: pointer;
+        }
+      }
+      .weui-cell__bd{
+        cursor: pointer;
+        width: 240px;
+        background: #ccc;
+        border-radius: 3px;
+      }
+    }
+  }
+}

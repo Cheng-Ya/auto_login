@@ -1,0 +1,24 @@
+{
+  "name": "auto_login",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cheng",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-coffee": "^2.3.4",
+    "gulp-less": "^3.3.0",
+    "gulp-webpack": "^1.5.0"
+  },
+  "description": "",
+  "dependencies": {
+    "weui": "^1.1.2"
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/dist/css/popup.css">
+    <link rel="stylesheet" href="/dist/css/weui.css">
+    <script src="/dist/js/jquery-3.2.1.min.js" ></script>
+    <script src="/dist/js/popup.js" ></script>
+  </head>
+  <body>
+    <header>
+      设置
+    </header>
+    <div class="weui-cell weui-cell_switch">
+      <div class="weui-cell__bd">
+        允许自动登录
+      </div>
+      <div class="'weui-cell__ft">
+        <input type="checkbox" class="weui-switch" checked="checked" id="change-status" >
+      </div>
+    </div>
+    <div class="weui-cells__title">
+      添加帐号
+    </div>
+    <div class="weui-cells weui-cells_form">
+      <div class="weui-cell" >
+        <div class="weui-cell__bd">
+          <input type="number" class="weui-input" placeholder="帐号或手机号" id="account-input" >
+        </div>
+      </div>
+      <div class="weui-cell">
+        <div class="weui-cell__bd">
+          <input type="password" class="weui-input" placeholder="密码" id="password-input" >
+        </div>
+        <div class="weui-cell__hd" style="margin-top:5px;" >
+          <a class="weui-btn weui-btn_mini weui-btn_primary" id='add-account-btn' >添加</a>
+        </div>
+      </div>
+    </div>
+    <div class="weui-cells__title">
+      当前帐号
+    </div>
+    <div class="weui-cells weui-cells_form">
+      <div class="weui-cell">
+        <div class="weui-cell__bd">
+          <p id="select-account" ></p>
+        </div>
+      </div>
+    </div>
+    <div class="weui-cells__title">
+      选择帐号
+    </div>
+    <div class="page__bd">
+      <div class="weui-cells" id="account-lists" >
+
+      </div>
+    </div>
+    <div class="weui-cell" id="account-template" style="display:none" >
+      <div class="weui-cell__hd">
+        <img src="/static/img/selected.png" alt="选择">
+      </div>
+      <div class="weui-cell__bd">
+        <p></p>
+      </div>
+      <div class="weui-cell__ft">
+        <img src="/static/img/delete.png" alt="删除">
+      </div>
+    </div>
+  </body>
+</html>

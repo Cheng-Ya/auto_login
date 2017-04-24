@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "邮箱帐号管理",
+  "description": "邮箱帐号管理及一键登录",
+  "version": "1.0",
+  "icons":{
+    "64": "static/img/auto64.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "48":"static/img/auto48.png",
+      "64": "static/img/auto64.png"
+    },
+    "default_popup": "static/html/popup.html",
+    "default_title": "邮箱帐号管理"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "css": ["dist/css/email.css","dist/css/collection.css"],
+      "js": ["dist/js/jquery-3.2.1.min.js","dist/js/bundle/content_scripts.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "permissions": [
+    "storage",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
