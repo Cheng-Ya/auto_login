@@ -3,17 +3,7 @@ class Email163
     @data = {
       email163: {
         domain: 'email.163.com',
-        class: 'email-163',
-        root: {
-          name: '.form',
-          aInput: '#userNameIpt',
-          pInput: '#pwdInput',
-          bSubmit: '#btnSubmit'
-        }
-      },
-      mail163: {
-        domain: 'dl.reg.163.com',
-        class: 'mail-163',
+        class: 'email-163-btn',
         root: {
           name: '#login-form',
           aInput: 'input[name=email]',
@@ -21,9 +11,29 @@ class Email163
           bSubmit: '#dologin'
         }
       },
+      mail163: {
+        domain: 'dl.reg.163.com',
+        class: 'mail-163-btn',
+        root: {
+          name: '#login-form',
+          aInput: 'input[name=email]',
+          pInput: 'input[name=password]',
+          bSubmit: '#dologin'
+        }
+      },
+      mail1631: {
+        domain: 'webzj.reg.163.com',
+        class: 'mail-163-btn',
+        root: {
+          name: '#login-form',
+          aInput: 'input[name=email]',
+          pInput: 'input[name=password]',
+          bSubmit: '#dologin'
+        }
+      }
       qq: {
         domain: 'xui.ptlogin2.qq.com',
-        class: 'mail-qq',
+        class: 'mail-qq-btn',
         root: {
           name: '#login',
           aInput: 'input[name=u]',
@@ -50,9 +60,14 @@ class Email163
           @autoLogin()
         name = @_data.root.name
         m = name.slice(0,1)
+        console.log 'm', m
         switch m
-          when '#' then document.getElementById(name.slice(1)).appendChild @button
-          when '.' then document.getElementsByClassName(name.slice(1))[0].appendChild @button
+          when '#'
+            rootEl = document.getElementById(name.slice(1))
+            rootEl &&  rootEl.appendChild @button
+          when '.'
+            rootEl = document.getElementsByClassName(name.slice(1))[0]
+            rootEl &&  rootEl.appendChild @button
         @onStorageChange()
   autoLogin:->
     chrome.storage.local.get null,(data)=>

@@ -2,21 +2,31 @@ var Email163;
 
 Email163 = (function() {
   function Email163() {
-    var key, m, name;
+    var key, m, name, rootEl;
     this.data = {
       email163: {
         domain: 'email.163.com',
-        "class": 'email-163',
+        "class": 'email-163-btn',
         root: {
-          name: '.form',
-          aInput: '#userNameIpt',
-          pInput: '#pwdInput',
-          bSubmit: '#btnSubmit'
+          name: '#login-form',
+          aInput: 'input[name=email]',
+          pInput: 'input[name=password]',
+          bSubmit: '#dologin'
         }
       },
       mail163: {
         domain: 'dl.reg.163.com',
-        "class": 'mail-163',
+        "class": 'mail-163-btn',
+        root: {
+          name: '#login-form',
+          aInput: 'input[name=email]',
+          pInput: 'input[name=password]',
+          bSubmit: '#dologin'
+        }
+      },
+      mail1631: {
+        domain: 'webzj.reg.163.com',
+        "class": 'mail-163-btn',
         root: {
           name: '#login-form',
           aInput: 'input[name=email]',
@@ -26,7 +36,7 @@ Email163 = (function() {
       },
       qq: {
         domain: 'xui.ptlogin2.qq.com',
-        "class": 'mail-qq',
+        "class": 'mail-qq-btn',
         root: {
           name: '#login',
           aInput: 'input[name=u]',
@@ -61,12 +71,15 @@ Email163 = (function() {
         })(this));
         name = this._data.root.name;
         m = name.slice(0, 1);
+        console.log('m', m);
         switch (m) {
           case '#':
-            document.getElementById(name.slice(1)).appendChild(this.button);
+            rootEl = document.getElementById(name.slice(1));
+            rootEl && rootEl.appendChild(this.button);
             break;
           case '.':
-            document.getElementsByClassName(name.slice(1))[0].appendChild(this.button);
+            rootEl = document.getElementsByClassName(name.slice(1))[0];
+            rootEl && rootEl.appendChild(this.button);
         }
         this.onStorageChange();
       }

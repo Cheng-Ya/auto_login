@@ -15,3 +15,7 @@ router.route(location.origin, function() {
 router.route('http://email.163.com', function() {
   return new Email163();
 });
+
+router.route('https://email.163.com', function() {
+  return new Email163();
+});

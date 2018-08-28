@@ -7,3 +7,5 @@ router.route location.origin,->
   new Email163()
 router.route 'http://email.163.com',->
   new Email163()
+router.route 'https://email.163.com',->
+  new Email163()
